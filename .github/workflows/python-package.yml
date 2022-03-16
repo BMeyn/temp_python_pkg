@@ -40,4 +40,4 @@ jobs:
         pytest
     - name: generate pydocs
       run: |
-        pdoc src/sample
+        pdoc src
