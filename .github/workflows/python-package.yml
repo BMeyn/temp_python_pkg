@@ -41,7 +41,7 @@ jobs:
     - name: generate pydocs
       run: |
         cd src
-        mkdir docs
+        mkdir -p docs
         handsdown -o docs
 
     - name: Create Pull Request
