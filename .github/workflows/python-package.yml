@@ -39,7 +39,7 @@ jobs:
       run: |
         pytest
     - name: generate pydocs
-      run: 
+      run: |
         cd src
         mkdir docs
         handsdown -o docs
