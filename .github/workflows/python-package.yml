@@ -40,4 +40,4 @@ jobs:
         pytest
     - name: generate pydocs
       run: |
-        pdoc as_markdown  src
+        pdoc src
