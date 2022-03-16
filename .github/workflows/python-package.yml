@@ -39,4 +39,5 @@ jobs:
       run: |
         pytest
     - name: generate pydocs
-      pydoc src
+      run: |
+        pydoc src
