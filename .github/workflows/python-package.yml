@@ -66,6 +66,7 @@ jobs:
         cd src
         mkdir -p ../docs
         handsdown -o ../docs
+    
     - name: update docs
     - uses: gr2m/create-or-update-pull-request-action@v1
         env:
