@@ -110,6 +110,7 @@ jobs:
   release:
     needs: build
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     steps:
     - name: Download a single artifact
       uses: actions/download-artifact@v3
