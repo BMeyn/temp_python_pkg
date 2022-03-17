@@ -45,7 +45,7 @@ jobs:
 
     - uses: TrueBrain/actions-flake8@v2
       with:
-       path: src
+       path: .
 
     #- name: Lint with flake8
      # run: |
