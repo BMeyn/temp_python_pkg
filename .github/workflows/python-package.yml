@@ -54,10 +54,14 @@ jobs:
       if: always()
       with:
         files: "out_report.xml"
-        
-   # - name: Test coverage
-   #   run: |
-   #     pytest --cov=src test/
+  
+    - uses: codecov/codecov-action@v2
+      with:
+        files: coverage.xml
+        flags: unittests # optional
+        name: codecov-umbrella # optional
+        fail_ci_if_error: true # optional (default = false)
+        verbose: true # optional (default = false)
     
     - name: build python package
       run: |
