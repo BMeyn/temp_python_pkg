@@ -46,3 +46,6 @@ jobs:
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
+    - name: build python package
+      run: |
+        python setup.py bdist_wheel
