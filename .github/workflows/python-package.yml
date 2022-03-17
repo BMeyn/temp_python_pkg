@@ -40,7 +40,7 @@ jobs:
         pytest
     - name: Test coverage
       run: |
-        pytest --cov=src tests/
+        pytest --cov=src test/
     - name: generate pydocs
       run: |
         cd src
