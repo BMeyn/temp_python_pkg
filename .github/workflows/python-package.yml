@@ -69,10 +69,20 @@ jobs:
     - name: build python package
       run: |
         python setup.py bdist_wheel
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: py-pkg-build-artifact
+        path: |
+          dist
   release:
     needs: build
     runs-on: ubuntu-latest
     steps:
+    - name: Download a single artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: py-pkg-build-artifact
     - name: Publish distribution 📦 to Test PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
