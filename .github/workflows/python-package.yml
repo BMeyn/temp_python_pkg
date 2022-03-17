@@ -40,7 +40,7 @@ jobs:
         pytest
     - name: Test coverage
       run: |
-        pytest --cov=myproj tests/
+        pytest --cov=src tests/
     - name: generate pydocs
       run: |
         cd src
@@ -53,7 +53,7 @@ jobs:
       run: |
         python setup.py bdist_wheel
   release:
-
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: release python package
