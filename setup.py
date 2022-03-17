@@ -12,7 +12,8 @@ with open('requirements.txt') as f:
 if __name__ == '__main__':
     setup(
         name='BMeyn',
-        version=os.getenv('PACKAGE_VERSION', '0.0.dev0'),
+        use_scm_version=True,
+        #version=os.getenv('PACKAGE_VERSION', '0.0.dev0'),
         package_dir={'': 'src'},
         packages=find_packages('src', include=[
             'demo*'
