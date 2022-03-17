@@ -47,7 +47,7 @@ jobs:
       uses: reviewdog/action-flake8@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-
+        reporter: github-pr-review
     #- name: Run flake8 on your PR - with annotations!
     #  uses: tayfun/flake8-your-pr@1.0.1
       #with:
