@@ -49,3 +49,10 @@ jobs:
     - name: build python package
       run: |
         python setup.py bdist_wheel
+  release:
+
+    runs-on: ubuntu-latest
+    steps:
+    - name: release python package
+      run: |
+        echo "Hello World"
