@@ -1,6 +1,6 @@
 import pytest
 
-from src.sample import sample
+from src.demo.main import sample
 
 def test_sample():
   res = sample()
