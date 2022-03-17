@@ -83,12 +83,16 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: py-pkg-build-artifact
+    - name: Check artifacts
+      run: ls py-pkg-build-artifact
+    - name: Check artifacts
+      run: ls py-pkg-build-artifact/dist
     - name: Publish distribution 📦 to Test PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
         password: ${{ secrets.pypi_token }}
         repository_url: https://test.pypi.org/legacy/
-        packages_dir: py-pkg-build-artifact
+        packages_dir: py-pkg-build-artifact/dist
     #- name: Publish distribution 📦 to PyPI
     #  if: startsWith(github.ref, 'refs/tags')
     #  uses: pypa/gh-action-pypi-publish@master
