@@ -84,9 +84,9 @@ jobs:
       with:
         name: py-pkg-build-artifact
     - name: Check artifacts
-      run: ls py-pkg-build-artifact
+      run: ls
     - name: Check artifacts
-      run: ls py-pkg-build-artifact/dist
+      run: ls dist
     - name: Publish distribution 📦 to Test PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
