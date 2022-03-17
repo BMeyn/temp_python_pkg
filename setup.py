@@ -24,10 +24,8 @@ if __name__ == '__main__':
         packages=find_packages('src', include=[
             'demo*'
         ]),
-
         long_description=long_description,
-        long_description_content_type='text/markdown'
-
+        long_description_content_type='text/markdown',
         description='A demo package.',
         install_requires= required
     )
