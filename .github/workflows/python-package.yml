@@ -31,8 +31,10 @@ jobs:
 
     - name: Determine Version
       uses: gittools/actions/gitversion/execute@v0.9.7
-    - name:
+    - name: Set Version 
       run: export PACKAGE_VERSION=${{ steps.gitversion.outputs.semVer }}
+    - name: output Version
+      run: echo $PACKAGE_VERSION
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
