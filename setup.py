@@ -6,13 +6,8 @@ import json
 import os
 
 
-def read_pipenv_dependencies(fname):
-    """Get default dependencies from Pipfile.lock."""
-    filepath = os.path.join(os.path.dirname(__file__), fname)
-    with open(filepath) as lockfile:
-        lockjson = json.load(lockfile)
-        return [dependency for dependency in lockjson.get('default')]
-
+with open('requirements.txt') as f:
+    required = f.read().splitlines()
 
 if __name__ == '__main__':
     setup(
@@ -23,7 +18,5 @@ if __name__ == '__main__':
             'demo*'
         ]),
         description='A demo package.',
-        install_requires=[
-            *read_pipenv_dependencies('Pipfile.lock'),
-        ]
+        install_requires= required
     )
