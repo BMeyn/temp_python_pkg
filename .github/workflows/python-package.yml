@@ -68,7 +68,7 @@ jobs:
         handsdown -o ../docs
     
     - name: update docs
-    - uses: gr2m/create-or-update-pull-request-action@v1
+      uses: gr2m/create-or-update-pull-request-action@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
