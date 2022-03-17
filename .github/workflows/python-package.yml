@@ -46,6 +46,7 @@ jobs:
     - uses: TrueBrain/actions-flake8@v2
       with:
        path: .
+       reporter: github-check
 
     #- name: Lint with flake8
      # run: |
