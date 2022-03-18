@@ -5,5 +5,5 @@ def sample():
 
 
 def other_sample():
-  """ other sample Module """
+  """ other test sample Module """
   return "other sample"
