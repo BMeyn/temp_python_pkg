@@ -85,7 +85,6 @@ jobs:
       with:
         title: ${{ steps.PR.outputs.pr_title }}
         body: ${{ steps.PR.outputs.pr_body }}
-        branch: ${GITHUB_REF##*/}
         commit-message: "build: update docs"
 
    # - name: Create Pull Request
