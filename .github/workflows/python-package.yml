@@ -70,7 +70,7 @@ jobs:
     - name: update docs
       uses: gr2m/create-or-update-pull-request-action@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }}
 
    # - name: Create Pull Request
    #   uses: peter-evans/create-pull-request@v3
