@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        persist-credentials: true
+        persist-credentials: false
         fetch-depth: 0
 
     - name: Install GitVersion
@@ -43,21 +43,37 @@ jobs:
         python -m pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: Lint with flake8
-      run: |
+    - name: flake8 Lint
+      uses: reviewdog/action-flake8@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        reporter: github-pr-review
+    #- name: Run flake8 on your PR - with annotations!
+    #  uses: tayfun/flake8-your-pr@1.0.1
+      #with:
+      #  GITHUB_TOKEN:  ${{ secrets.flake8_token }}
+
+
+    #- name: Lint with flake8
+     # run: |
         # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+     #   flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    #    flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
     - name: generate pydocs
       run: |
         cd src
         mkdir -p ../docs
         handsdown -o ../docs
+    
+    - name: update docs
+      uses: gr2m/create-or-update-pull-request-action@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v3
+   # - name: Create Pull Request
+   #   uses: peter-evans/create-pull-request@v3
     
     - name: Test with pytest
       run: |
@@ -94,6 +110,7 @@ jobs:
   release:
     needs: build
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     steps:
     - name: Download a single artifact
       uses: actions/download-artifact@v3
