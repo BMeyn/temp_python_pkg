@@ -83,7 +83,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }}
       with:
-        title: Docs: Update module ducumentation
+        title: Docs Update module ducumentation
         commit-message: "build: update docs"
 
    # - name: Create Pull Request
