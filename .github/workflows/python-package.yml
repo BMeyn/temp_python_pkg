@@ -76,7 +76,8 @@ jobs:
          sha: ${{ github.event.pull_request.head.sha }}
          # Only return if PR is still open
          filterOutClosed: true
-        
+    - name: show envs
+      run: printenv
     - name: update docs
       uses: gr2m/create-or-update-pull-request-action@v1
       env:
