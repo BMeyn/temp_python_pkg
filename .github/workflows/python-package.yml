@@ -84,6 +84,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }}
       with:
         title: Docs Update module ducumentation
+        branch: ${{ github.head_ref }}
         commit-message: "build: update docs"
 
    # - name: Create Pull Request
