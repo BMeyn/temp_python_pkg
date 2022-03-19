@@ -5,4 +5,4 @@ from src.demo.main import sample
 
 def test_sample():
   res = sample()
-  assert res == 'Hello Worl'
+  assert res == 'Hello World'
