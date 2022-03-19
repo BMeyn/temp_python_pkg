@@ -53,15 +53,6 @@ jobs:
          sha: ${{ github.event.pull_request.head.sha }}
          # Only return if PR is still open
          filterOutClosed: true
-    
-    - name: update docs
-      uses: gr2m/create-or-update-pull-request-action@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }}
-      with:
-        title: Docs Update module ducumentation
-        branch: ${{ github.head_ref }}
-        commit-message: "build: update docs"
  
     - name: Test with pytest
       run: |
@@ -89,6 +80,14 @@ jobs:
     - name: generate badgets
       run: genbadge tests --input-file out_report.xml
      
+    - name: update docs
+      uses: gr2m/create-or-update-pull-request-action@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }}
+      with:
+        title: Docs Update module ducumentation
+        branch: ${{ github.head_ref }}
+        commit-message: "build: update docs"
   build:
     needs: test
     runs-on: ubuntu-latest
