@@ -83,7 +83,8 @@ jobs:
         verbose: true # optional (default = false)
     
    - name: generate badgets
-     run: genbadget test --input-file output_report.xml
+     run: genbadget tests --input-file output_report.xml
+     
   build:
     needs: test
     runs-on: ubuntu-latest
