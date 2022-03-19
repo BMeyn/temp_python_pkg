@@ -1,6 +1,6 @@
 documentation:
 - any: ['*.md']
 enhancement:
-- src/*
+- any: ['*.py']
 dependencies:
 - requirements.txt
