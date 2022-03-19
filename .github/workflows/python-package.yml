@@ -132,13 +132,13 @@ jobs:
     - name: Check artifacts
       run: ls
 
-- name: generate release notes
-  uses: rfennell/ReleaseNotesAction@v1
-  env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided automatically, you do not need to create your own token
-  with:
-    templateFile: '${{ github.workspace }}//template.md'
-    outputfile: '${{ github.workspace }}//releasenotes.md'
+    - name: generate release notes
+      uses: rfennell/ReleaseNotesAction@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided automatically, you do not need to create your own token
+      with:
+        templateFile: '${{ github.workspace }}//template.md'
+        outputfile: '${{ github.workspace }}//releasenotes.md'
 
     - name: Publish distribution 📦 to Test PyPI
       uses: pypa/gh-action-pypi-publish@master
