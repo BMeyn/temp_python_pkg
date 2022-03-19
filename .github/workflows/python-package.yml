@@ -83,7 +83,7 @@ jobs:
         verbose: true # optional (default = false)
     
     - name: generate badgets
-      run: genbadget tests --input-file output_report.xml
+      run: genbadge tests --input-file output_report.xml
      
   build:
     needs: test
