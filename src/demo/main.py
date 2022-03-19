@@ -4,4 +4,5 @@ def sample():
   return "Hello World"
 
 def new_func(): 
+  """ new Module """
   return ""

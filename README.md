@@ -1,6 +1,5 @@
 # Template for python package
 
-
 [![HitCount](https://hits.dwyl.com/BMeyn/temp_python_package.svg?style=flat-square)](http://hits.dwyl.com/BMeyn/temp_python_package)
 [![PyPI version](https://badge.fury.io/py/BMeyn.svg)](https://badge.fury.io/py)
 ![Tests Status](docs/badget/tests-badget.svg?dummy=8484744)

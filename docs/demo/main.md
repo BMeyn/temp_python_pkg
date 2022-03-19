@@ -14,6 +14,8 @@
 def new_func():
 ```
 
+new Module
+
 ## sample
 
 [[find in source code]](../../../demo/main.py#L2)
