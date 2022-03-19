@@ -1,2 +1,5 @@
-Documentation:
+documentation:
 - docs/*
+
+enhancement
+- src/*
