@@ -118,6 +118,11 @@ jobs:
         path: |
           dist
 
+    - uses: rickstaa/action-create-tag@v1
+      with:
+        tag: ${{ gitversion.fullsemver }}
+        message: "Latest release"
+
 
   release:
     needs: build
