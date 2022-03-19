@@ -120,7 +120,7 @@ jobs:
 
     - uses: rickstaa/action-create-tag@v1
       with:
-        tag: ${{ gitversion.semver }}
+        tag: ${{ env.GITVERSION_SEMVER }}
         message: "Latest release"
 
 
