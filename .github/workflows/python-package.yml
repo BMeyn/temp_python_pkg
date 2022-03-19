@@ -82,8 +82,8 @@ jobs:
         fail_ci_if_error: true # optional (default = false)
         verbose: true # optional (default = false)
     
-   - name: generate badgets
-     run: genbadget tests --input-file output_report.xml
+    - name: generate badgets
+      run: genbadget tests --input-file output_report.xml
      
   build:
     needs: test
