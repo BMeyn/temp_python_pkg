@@ -87,7 +87,7 @@ jobs:
         ls 
         ls test
     - name: generate badgets
-      run: genbadge tests --input-file output_report.xml
+      run: genbadge tests --input-file out_report.xml
      
   build:
     needs: test
