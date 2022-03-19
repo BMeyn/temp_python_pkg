@@ -82,7 +82,8 @@ jobs:
         fail_ci_if_error: true # optional (default = false)
         verbose: true # optional (default = false)
     
-
+   - name: generate badgets
+     run: genbadget test --input-file output_report.xml
   build:
     needs: test
     runs-on: ubuntu-latest
