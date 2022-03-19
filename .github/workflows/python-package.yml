@@ -81,6 +81,8 @@ jobs:
       run: |
         # generate badget for unittests
         genbadge tests --input-file out_report.xml --output-file docs/badget/tests-badget.svg
+        # generate badget for coverage 
+        genbadge coverage --input-file coverage.xml --output-file docs/badget/coverage-badget.svg
      
     - name: update docs
       uses: gr2m/create-or-update-pull-request-action@v1
