@@ -53,15 +53,6 @@ jobs:
          sha: ${{ github.event.pull_request.head.sha }}
          # Only return if PR is still open
          filterOutClosed: true
-    
-    - name: update docs
-      uses: gr2m/create-or-update-pull-request-action@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }}
-      with:
-        title: Docs Update module ducumentation
-        branch: ${{ github.head_ref }}
-        commit-message: "build: update docs"
  
     - name: Test with pytest
       run: |
@@ -73,17 +64,34 @@ jobs:
       with:
         files: "out_report.xml"
   
-    - uses: codecov/codecov-action@v2
-      with:
-        files: coverage.xml
-        token: ${{ secrets.codecov_token }}
-        flags: unittests # optional
-        name: codecov-umbrella # optional
-        fail_ci_if_error: true # optional (default = false)
-        verbose: true # optional (default = false)
+    #- uses: codecov/codecov-action@v2
+     # with:
+        #files: coverage.xml
+        #token: ${{ secrets.codecov_token }}
+        #flags: unittests # optional
+        #name: codecov-umbrella # optional
+        #fail_ci_if_error: true # optional (default = false)
+        #verbose: true # optional (default = false)
     
+    - name: debug
+      run: |
+        ls 
+        ls test
     - name: generate badgets
-      run: genbadge tests --input_file out_report.xml
+      run: |
+        # generate badget for unittests
+        genbadge tests --input-file out_report.xml --output-file docs/badget/tests-badget.svg
+        # generate badget for coverage 
+        genbadge coverage --input-file coverage.xml --output-file docs/badget/coverage-badget.svg
+     
+    - name: update docs
+      uses: gr2m/create-or-update-pull-request-action@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }}
+      with:
+        title: Docs Update module ducumentation
+        branch: ${{ github.head_ref }}
+        commit-message: "build: update docs"
   build:
     needs: test
     runs-on: ubuntu-latest
