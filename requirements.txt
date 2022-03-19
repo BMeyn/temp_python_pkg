@@ -2,4 +2,4 @@ handsdown
 wheel
 pytest-cov
 setuptools_scm
-genbadge[all]
+genbadge
