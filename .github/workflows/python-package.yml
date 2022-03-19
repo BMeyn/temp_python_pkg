@@ -78,7 +78,9 @@ jobs:
         ls 
         ls test
     - name: generate badgets
-      run: genbadge tests --input-file out_report.xml
+      run: |
+        # generate badget for unittests
+        genbadge tests --input-file out_report.xml --output-file docs/badget/tests-badget.svg
      
     - name: update docs
       uses: gr2m/create-or-update-pull-request-action@v1
