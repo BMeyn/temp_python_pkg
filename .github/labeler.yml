@@ -2,3 +2,5 @@ documentation:
 - any: ['*.md']
 enhancement:
 - src/*
+dependencies:
+- requirements.txt
