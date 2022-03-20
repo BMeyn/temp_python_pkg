@@ -126,6 +126,14 @@ jobs:
   #      path: |
    #       dist
 
+    - name: generate badgets
+      run: |
+        # generate badget for unittests
+        genbadge tests --input-file out_report.xml --output-file docs/badget/tests-badget.svg
+        # generate badget for coverage 
+        genbadge coverage --input-file coverage.xml --output-file docs/badget/coverage-badget.svg
+     
+
     - name: generate release notes
       uses: rfennell/ReleaseNotesAction@v1
       env:
