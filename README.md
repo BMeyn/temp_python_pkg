@@ -1,4 +1,4 @@
-# Template for python package
+# Template for python package tedt
 
 [![HitCount](https://hits.dwyl.com/BMeyn/temp_python_package.svg?style=flat-square)](http://hits.dwyl.com/BMeyn/temp_python_package)
 [![PyPI version](https://badge.fury.io/py/BMeyn.svg)](https://badge.fury.io/py)
