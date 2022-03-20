@@ -19,6 +19,7 @@ jobs:
     - name: Check artifacts
       run: ls
 
+
     - name: generate release notes
       uses: rfennell/ReleaseNotesAction@v1
       env:
