@@ -129,4 +129,5 @@ jobs:
     - uses: rickstaa/action-create-tag@v1
       with:
         tag: v${{ env.GITVERSION_SEMVER }}
+        github_token: ${{ secrets.FLAKE8_TOKEN }}
         message: "Latest release"
