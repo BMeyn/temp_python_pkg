@@ -128,5 +128,5 @@ jobs:
 
     - uses: rickstaa/action-create-tag@v1
       with:
-        tag: ${{ env.GITVERSION_SEMVER }}
+        tag: v${{ env.GITVERSION_SEMVER }}
         message: "Latest release"
