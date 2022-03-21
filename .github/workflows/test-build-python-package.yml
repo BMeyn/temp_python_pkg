@@ -128,7 +128,7 @@ jobs:
         outputfile: 'CHANGELOG.md'
 
     - name: write version number to file
-      run: "$GITVERSION_SEMVER"  > version.txt
+      run: echo "$GITVERSION_SEMVER"  > version.txt
     - name: Archive production artifacts
       uses: actions/upload-artifact@v3
       with:
