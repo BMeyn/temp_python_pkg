@@ -114,7 +114,7 @@ jobs:
       with:
         useConfigFile: true
         configFilePath: '.github/GitVersion.yml'
-        additionalArguments: '/showConfig'
+        #additionalArguments: '/showConfig'
 
     - name: show envs
       run: printenv
