@@ -5,6 +5,8 @@ branches:
   feature:
     regex: ^features?[/-]
     increment: minor
+    source-branches: ['main']
   bugfix:
     regex: ^bugfix?[/-]
     increment: patch
+    source-branches: ['main']
