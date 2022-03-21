@@ -151,7 +151,6 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: py-pkg-build-artifact
-        path: dist
 
     - name: check dir
       run: |
