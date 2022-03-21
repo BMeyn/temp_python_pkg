@@ -140,3 +140,48 @@ jobs:
         tag: v${{ env.GITVERSION_SEMVER }}
         github_token: ${{ secrets.FLAKE8_TOKEN }}
         message: "Latest release"
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+
+    - name: Download a single artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: py-pkg-build-artifact
+        path: dist
+
+   - name: check dir
+     run: |
+       ls
+       Ls dist
+
+    - name: Publish distribution 📦 to Test PyPI
+      uses: pypa/gh-action-pypi-publish@master
+      with:
+        user: __token__
+        password: ${{ secrets.pypi_test_token }}
+        repository_url: https://test.pypi.org/legacy/
+        packages_dir: dist
+
+    - name: Publish distribution 📦 to PyPI
+      #if: startsWith(github.ref, 'refs/tags')
+      uses: pypa/gh-action-pypi-publish@master
+      with:
+        user: __token__
+        password: ${{ secrets.pypi_token }}
+        packages_dir: dist
+
+    - name: release
+      uses: actions/create-release@v1
+      id: create_release
+      with:
+        draft: false
+        prerelease: false
+        release_name: ${{ steps.version.outputs.version }}
+        tag_name: ${{ github.ref }}
+        body_path: CHANGELOG.md
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
