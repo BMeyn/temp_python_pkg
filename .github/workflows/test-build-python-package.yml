@@ -163,6 +163,7 @@ jobs:
       run: |
         version=$(cat "version.txt") 
         echo "$version"
+        export GITVERSION_SEMVER="$version"
     - name: Publish distribution 📦 to Test PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
@@ -186,7 +187,7 @@ jobs:
         draft: false
         prerelease: false
         release_name: ${{ steps.version.outputs.version }}
-        tag_name: "$version"
+        tag_name: v${{ env.GITVERSION_SEMVER }}
         body_path: CHANGELOG.md
       env:
         GITHUB_TOKEN: ${{ github.token }}
