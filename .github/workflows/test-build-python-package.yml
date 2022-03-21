@@ -119,21 +119,6 @@ jobs:
         python setup.py bdist_wheel
         python setup.py sdist
 
-  #  - name: Archive production artifacts
-   #   uses: actions/upload-artifact@v3
-  #    with:
-    #    name: py-pkg-build-artifact
-  #      path: |
-   #       dist
-
-    #- name: generate badgets
-    #  run: |
-        # generate badget for unittests
-    #    genbadge tests --input-file out_report.xml --output-file docs/badget/tests-badget.svg
-        # generate badget for coverage 
-    #    genbadge coverage --input-file coverage.xml --output-file docs/badget/coverage-badget.svg
-     
-
     - name: generate release notes
       uses: rfennell/ReleaseNotesAction@v1
       env:
@@ -141,6 +126,14 @@ jobs:
       with:
         templateFile: '${{ github.workspace }}//template.md'
         outputfile: 'CHANGELOG.md'
+
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: py-pkg-build-artifact
+        path: |
+          dist
+          CHANGELOG.md
 
     - uses: rickstaa/action-create-tag@v1
       with:
