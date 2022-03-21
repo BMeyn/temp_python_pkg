@@ -8,6 +8,8 @@
 ![Coverage Status](https://github.com/BMeyn/temp_python_pkg/blob/main/docs/badget/coverage-badget.svg?dummy=8484744)
 
 
+[![Tests Status](https://smarie.github.io/python-genbadge/reports/junit/junit-badge.svg?dummy=8484744)](https://smarie.github.io/python-genbadge/reports/junit/report.html) 
+
 ## required action secrets
 - codecov_token
   - adds test code coverage annotations to PRs
