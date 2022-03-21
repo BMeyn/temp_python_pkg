@@ -1,12 +1,15 @@
 mode: Mainline
 branches:
   main:
-    regex: main
+    tag: ""
+    is-mainline: true
+    increment: none
+    is-source-branch-for: ['feature', 'fix']
   feature:
-    regex: ^feature?[/-]
-    increment: minor
-    source-branches: ['main']
-  bugfix:
-    regex: ^bugfix?[/-]
+    increment: Minor
+  fix:
+    regex: bugfix(es)?[/-]
     increment: patch
-    source-branches: ['main']
+    source-branches: ['develop', 'master']
+ignore:
+  sha: []
