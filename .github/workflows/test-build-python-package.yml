@@ -111,6 +111,10 @@ jobs:
 
     - name: Determine Version
       uses: gittools/actions/gitversion/execute@v0.9.7
+      with:
+        useConfigFile: true
+        configFilePath: '.github/GitVersion.yml'
+        additionalArguments: '/showConfig'
 
     - name: show envs
       run: printenv
