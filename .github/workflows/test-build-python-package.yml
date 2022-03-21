@@ -163,7 +163,8 @@ jobs:
       run: |
         version=$(cat "version.txt") 
         echo "$version"
-        export GITVERSION_SEMVER="$version"
+        echo "GITVERSION_SEMVER=$version" >> $GITHUB_ENV
+
     - name: Publish distribution 📦 to Test PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
