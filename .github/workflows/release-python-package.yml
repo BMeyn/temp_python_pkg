@@ -11,11 +11,11 @@ jobs:
 
     - uses: actions/checkout@v3
 
-    #- name: Download a single artifact
-     # uses: actions/download-artifact@v3
-    #  with:
-        #name: py-pkg-build-artifact
-       # path: dist
+    - name: Download a single artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: py-pkg-build-artifact
+        path: dist
 
  
 
