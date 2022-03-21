@@ -4,11 +4,10 @@
 
 [![HitCount](https://hits.dwyl.com/BMeyn/temp_python_package.svg?style=flat-square)](http://hits.dwyl.com/BMeyn/temp_python_package)
 [![PyPI version](https://badge.fury.io/py/BMeyn.svg)](https://badge.fury.io/py)
-[![Tests Status](https://github.com/BMeyn/temp_python_pkg/blob/main/docs/badget/tests-badget.svg?dummy=8484744)](https://github.com/BMeyn/temp_python_pkg)
+[![Tests Status](https://github.com/BMeyn/temp_python_pkg/blob/main/docs/badget/tests-badget.svg?dummy=8484744)](https://smarie.github.io/python-genbadge/reports/junit/report.html)
 [![Coverage Status](https://github.com/BMeyn/temp_python_pkg/blob/main/docs/badget/coverage-badget.svg?dummy=8484744)](https://github.com/BMeyn/temp_python_pkg)
 
 
-[![Tests Status](https://smarie.github.io/python-genbadge/reports/junit/junit-badge.svg?dummy=8484744)](https://smarie.github.io/python-genbadge/reports/junit/report.html) 
 
 ## required action secrets
 - codecov_token
