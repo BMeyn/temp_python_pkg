@@ -1,4 +1,4 @@
-name: Test & build python package
+name: Test, build & release python package
 
 on:
   push:
@@ -153,10 +153,10 @@ jobs:
         name: py-pkg-build-artifact
         path: dist
 
-   - name: check dir
-     run: |
-       ls
-       Ls dist
+    - name: check dir
+      run: |
+        ls
+        ls dist
 
     - name: Publish distribution 📦 to Test PyPI
       uses: pypa/gh-action-pypi-publish@master
