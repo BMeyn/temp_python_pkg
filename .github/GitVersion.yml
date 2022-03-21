@@ -3,7 +3,7 @@ branches:
   main:
     regex: main
   feature:
-    regex: ^features?[/-]
+    regex: ^feature?[/-]
     increment: minor
     source-branches: ['main']
   bugfix:
