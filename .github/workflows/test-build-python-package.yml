@@ -90,7 +90,7 @@ jobs:
         commit-message: "build: update docs"
   build:
     needs: test
-    if: github.ref == 'refs/heads/main'
+    #if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     steps:
