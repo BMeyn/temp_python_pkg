@@ -18,7 +18,6 @@ with open('requirements.txt') as f:
 
 if __name__ == '__main__':
     setup(
-        name='BMeyn',
         version=os.getenv('GITVERSION_SEMVER'),
         package_dir={'': 'src'},
         packages=find_packages('src', include=[
