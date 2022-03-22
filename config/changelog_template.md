@@ -1,8 +1,4 @@
-# Release Notes 
-## Run Details
-- Workflow: {{runDetails.name}} 
-- Head Branch: {{runDetails.head_branch}} 
-- Head SHA: {{runDetails.head_sha}} 
+# Release Notes
 
 ## Pull Requests
 {{#forEach runDetails.pull_requests}}
