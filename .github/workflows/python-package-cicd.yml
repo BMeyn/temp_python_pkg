@@ -90,13 +90,14 @@ jobs:
 
     - name: Commit report
       run: |
-        git config --global user.name 'BMeyn'
-        git config --global user.email 'BMeyn@users.noreply.github.com'
-        git commit -am "Automated report
-        >
-        >
+        printenv
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git commit -am "Automated report \n
+        > \n
+        > \n
         skip-checks: true"
-        git push
+        git push origin HEAD:$GITHUB_REF
 
     #- name: update docs
      # uses: gr2m/create-or-update-pull-request-action@v1
