@@ -19,6 +19,7 @@
   - **348b8328d095113c49ca5f2f9d09af418f740daa** build: update docs
   - **012a5ed15fd1ffbde440283a64c367ab4401084b** build: update docs
   - **4640fac7b026b17ea7613cd1c731f229faed783e** build: update docs
+  - **791a6534c8065d20522b701e82f3ec9451e69844** build: update docs
 ### Comments
  - ## Unit Test Results
 1 files  ±0  1 suites  ±0   0s [:stopwatch:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;duration of all tests&quot;) ±0s
