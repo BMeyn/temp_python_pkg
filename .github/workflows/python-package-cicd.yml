@@ -95,9 +95,10 @@ jobs:
       with:
         title: Docs Update module ducumentation
         branch: ${{ github.head_ref }}
-        commit-message: "build: update docs 
-                         >
-                         > skip-checks: true"
+        commit-message: "build: update docs \n
+                         > \n
+                         > \n
+                         skip-checks: true"
   build:
     needs: test
     if: github.ref == 'refs/heads/main'
