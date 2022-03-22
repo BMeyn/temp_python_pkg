@@ -92,7 +92,7 @@ jobs:
       run: |
         git config --global user.name 'BMeyn'
         git config --global user.email 'BMeyn@users.noreply.github.com'
-        git commit -m "Automated report
+        git commit -am "Automated report
         >
         >
         skip-checks: true"
