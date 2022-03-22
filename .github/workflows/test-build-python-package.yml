@@ -1,4 +1,4 @@
-name: Test, build & release python package
+name: Python package CI/CD
 
 on:
   push:
