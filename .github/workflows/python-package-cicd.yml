@@ -113,7 +113,7 @@ jobs:
       uses: gittools/actions/gitversion/execute@v0.9.7
       with:
         useConfigFile: true
-        configFilePath: '.github/GitVersion.yml'
+        configFilePath: 'config/GitVersion.yml'
         #additionalArguments: '/showConfig'
 
     - name: show envs
@@ -128,7 +128,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided automatically, you do not need to create your own token
       with:
-        templateFile: '${{ github.workspace }}//template.md'
+        templateFile: '${{ github.workspace }}//config//changelog_template.md'
         outputfile: 'CHANGELOG.md'
 
     - name: write version number to file
