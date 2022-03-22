@@ -1,4 +1,4 @@
-# Template for python package test
+# Template for python package
 
 ![banner](https://bmeyn.github.io/temp_python_pkg/docs/images/668F6A24-209D-4B91-AFF7-D9F77DD37707.png)
 
