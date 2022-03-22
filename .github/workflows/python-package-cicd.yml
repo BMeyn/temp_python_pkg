@@ -88,14 +88,14 @@ jobs:
         templateFile: '${{ github.workspace }}//config//changelog_template.md'
         outputfile: 'CHANGELOG.md'
 
-    #- name: update docs
-    #  uses: gr2m/create-or-update-pull-request-action@v1
-     # env:
-     #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} #${{ secrets.FLAKE8_TOKEN }}
-    #  with:
-     #   title: Docs Update module ducumentation
-      #  branch: ${{ github.head_ref }}
-       # commit-message: "build: update docs"
+    - name: update docs
+      uses: gr2m/create-or-update-pull-request-action@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} #${{ secrets.FLAKE8_TOKEN }}
+      with:
+        title: Docs Update module ducumentation
+        branch: ${{ github.head_ref }}
+        commit-message: "build: update docs"
   build:
     needs: test
     if: github.ref == 'refs/heads/main'
