@@ -79,7 +79,15 @@ jobs:
         genbadge tests --input-file out_report.xml --output-file docs/badget/tests-badget.svg
         # generate badget for coverage 
         genbadge coverage --input-file coverage.xml --output-file docs/badget/coverage-badget.svg
-     
+
+    - name: generate release notes
+      uses: rfennell/ReleaseNotesAction@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided automatically, you do not need to create your own token
+      with:
+        templateFile: '${{ github.workspace }}//config//changelog_template.md'
+        outputfile: 'CHANGELOG.md'
+
     - name: update docs
       uses: gr2m/create-or-update-pull-request-action@v1
       env:
@@ -122,14 +130,6 @@ jobs:
       run: |
         python setup.py bdist_wheel
         python setup.py sdist
-
-    - name: generate release notes
-      uses: rfennell/ReleaseNotesAction@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided automatically, you do not need to create your own token
-      with:
-        templateFile: '${{ github.workspace }}//config//changelog_template.md'
-        outputfile: 'CHANGELOG.md'
 
     - name: write version number to file
       run: echo "$GITVERSION_SEMVER"  > version.txt
