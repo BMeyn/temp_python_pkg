@@ -6,10 +6,12 @@ branches:
     increment: none
     is-source-branch-for: ['feature', 'fix']
   feature:
+    regex: feature?[/-]
     increment: Minor
+    source-branches: ['main']
   fix:
     regex: bugfix(es)?[/-]
-    increment: patch
-    source-branches: ['develop', 'master']
+    increment: Patch
+    source-branches: ['feature', 'master']
 ignore:
   sha: []
