@@ -6,6 +6,7 @@
   - **f767c6ccec62b81c0c9eac98f94732a8cb64ca5d** Update changelog_template.md
   - **ab1b8b651e3631699fee4e0b206ff7eb3b7f3690** Update python-package-cicd.yml
   - **c4db3b27279aab6d3eeb5caa13cf86e8fdf37133** build: update docs
+  - **0a87f6abfc924d368b9ea8c0578772f66fb3f37b** build: update docs
 ### Comments
  - ## Unit Test Results
 1 files  ±0  1 suites  ±0   0s [:stopwatch:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;duration of all tests&quot;) ±0s
