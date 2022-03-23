@@ -98,7 +98,7 @@ jobs:
     #    git push --force origin HEAD:$GITHUB_HEAD_REF
 
     
-   - name: update docs
+    - name: update docs
       uses: gr2m/create-or-update-pull-request-action@v1
       env:
         GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }} #${{ secrets.GITHUB_TOKEN }} 
