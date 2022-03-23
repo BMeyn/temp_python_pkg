@@ -111,7 +111,7 @@ jobs:
         commit-message: "build: update docs
 
 
-skip-checks: true"
+skip-checks:true"
                          
                          
                          
