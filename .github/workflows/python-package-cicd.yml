@@ -94,10 +94,7 @@ jobs:
         git config user.name "$GITHUB_REPOSITORY_OWNER"
         git config user.email "$GITHUB_REPOSITORY_OWNER@github.com"
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-        git commit -am "Automated report
-        
-        
-        skip-checks: true"  
+        git commit -am $'Automated report\n\nskip-checks: true' 
         git push --force origin HEAD:$GITHUB_HEAD_REF
 
     #- name: update docs
