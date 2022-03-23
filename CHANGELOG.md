@@ -2,7 +2,7 @@
 ## Run Details
 - Workflow: Python package CI/CD 
 - Head Branch: bugfix/skip-1 
-- Head SHA: c04c6839e841bd4ea2286b9f6385e66a815e62b6 
+- Head SHA: a2e78293d40b086116ecb960941c6220f33e47df 
 
 ## Pull Requests
 **38** Update python-package-cicd.yml
@@ -39,9 +39,10 @@ skip-checks: true
 skip-checks: true
   - **c04c6839e841bd4ea2286b9f6385e66a815e62b6** Update python-package-cicd.yml
   - **e3c9ca9343c23b3eea140ca75c9eb294e5ce1245** Merge c04c6839e841bd4ea2286b9f6385e66a815e62b6 into fba29d10e0b66981ceea4bc5f1cb6ee39b895582
-  - **d52b39511b4d18543ef371207565fab4ef2041b4** Automated report
+  - **0b1a506d9d364817afd2eccb62f739ce4bf3bec2** Automated report
 
 skip-checks: true
+  - **a2e78293d40b086116ecb960941c6220f33e47df** Update python-package-cicd.yml
 ### Comments
  - ## Unit Test Results
 1 files  ±0  1 suites  ±0   0s [:stopwatch:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;duration of all tests&quot;) ±0s
@@ -53,7 +54,7 @@ Results for commit 9e9ae0e7. ± Comparison against base commit fba29d10.
 1 files  ±0  1 suites  ±0   0s [:stopwatch:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;duration of all tests&quot;) ±0s
 1 tests ±0  1 [:heavy_check_mark:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;passed tests&quot;) ±0  0 [:zzz:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;skipped / disabled tests&quot;) ±0  0 [:x:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;failed tests&quot;) ±0 
 
-Results for commit c04c6839. ± Comparison against base commit fba29d10.
+Results for commit a2e78293. ± Comparison against base commit fba29d10.
 
 :recycle: This comment has been updated with latest results.
 
