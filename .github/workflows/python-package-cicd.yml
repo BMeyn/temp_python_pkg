@@ -97,7 +97,7 @@ jobs:
         git commit -am "Automated report [skip ci]
 
 
-skip-checks: true"
+        skip-checks: true"
         git push --force origin HEAD:$GITHUB_HEAD_REF
 
     
