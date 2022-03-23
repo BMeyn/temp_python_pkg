@@ -94,7 +94,10 @@ jobs:
         git config user.name "$GITHUB_REPOSITORY_OWNER"
         git config user.email "$GITHUB_REPOSITORY_OWNER@github.com"
         git remote set-url origin https://x-access-token:${{ secrets.FLAKE8_TOKEN }}@github.com/${{ github.repository }}
-        git commit -am $'Automated report [skip ci]\n\nskip-checks: true' 
+        git commit -am "Automated report [skip ci]
+
+
+skip-checks: true"
         git push --force origin HEAD:$GITHUB_HEAD_REF
 
     
