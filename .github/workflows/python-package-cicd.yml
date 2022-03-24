@@ -100,16 +100,20 @@ jobs:
         skip-checks: true'
         git push --force origin HEAD:$GITHUB_HEAD_REF
         
-    - name: update status
-      run: |
-        git_commit_sha="$(git rev-parse HEAD)"
-        curl \
-        -X POST \
-        -v \
-        -H "Accept: application/vnd.github.v3+json" \
-        -H "authorization: Bearer ${{ secrets.FLAKE8_TOKEN }}" \
-        https://api.github.com/repos/BMeyn/temp_python_pkg/statuses/$git_commit_sha \
-        -d '{"state":"success"}'
+    - uses: ouzi-dev/commit-status-updater@v1.1.0
+      with:
+        status: "success"
+    
+    #- name: update status
+    #  run: |
+    #    git_commit_sha="$(git rev-parse HEAD)"
+    #    curl \
+    #    -X POST \
+    #    -v \
+    #    -H "Accept: application/vnd.github.v3+json" \
+    #    -H "authorization: Bearer ${{ secrets.FLAKE8_TOKEN }}" \
+    #    https://api.github.com/repos/BMeyn/temp_python_pkg/statuses/$git_commit_sha \
+    #    -d '{"state":"success"}'
 
    # - name: update docs
     #  uses: gr2m/create-or-update-pull-request-action@v1
