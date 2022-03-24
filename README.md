@@ -1,7 +1,7 @@
 # Template for python package
 
 TODO: replace project dependencies
-TEST
+
 
 ![banner](https://bmeyn.github.io/temp_python_pkg/docs/images/project-banner.png)
 
