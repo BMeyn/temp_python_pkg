@@ -103,6 +103,7 @@ jobs:
       run: |
         curl \
         -X POST \
+        -v \
         -H "Accept: application/vnd.github.v3+json" \
         https://api.github.com/repos/BMeyn/temp_python_pkg/statuses/a2e8491f9a664c7e2cc8e27c6ee8012a53c5c5a7 \
         -d '{"state":"success"}'
