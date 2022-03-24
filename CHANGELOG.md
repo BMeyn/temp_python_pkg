@@ -2,7 +2,7 @@
 ## Run Details
 - Workflow: Python package CI/CD 
 - Head Branch: bugfix/skip-1 
-- Head SHA: 76b0bb83e3d31c73f2e2d1916663b68711a3d573 
+- Head SHA: b3483f6ad84c74f3a7a16d96dbd27e4ea8177ed4 
 
 ## Pull Requests
 **38** Update python-package-cicd.yml
@@ -68,7 +68,7 @@ Results for commit 9e9ae0e7. ± Comparison against base commit fba29d10.
 1 files  ±0  1 suites  ±0   0s [:stopwatch:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;duration of all tests&quot;) ±0s
 1 tests ±0  1 [:heavy_check_mark:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;passed tests&quot;) ±0  0 [:zzz:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;skipped / disabled tests&quot;) ±0  0 [:x:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;failed tests&quot;) ±0 
 
-Results for commit 76b0bb83. ± Comparison against base commit fba29d10.
+Results for commit b3483f6a. ± Comparison against base commit fba29d10.
 
 :recycle: This comment has been updated with latest results.
 
