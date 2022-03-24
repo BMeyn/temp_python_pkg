@@ -104,7 +104,7 @@ jobs:
         curl \
         -X POST \
         -H "Accept: application/vnd.github.v3+json" \
-        https://api.github.com/repos/$GITHUB_REPO/BMeyn/statuses/a2e8491f9a664c7e2cc8e27c6ee8012a53c5c5a7 \
+        https://api.github.com/repos/temp_python_pkg/BMeyn/statuses/a2e8491f9a664c7e2cc8e27c6ee8012a53c5c5a7 \
         -d '{"state":"success"}'
     
    # - name: update docs
