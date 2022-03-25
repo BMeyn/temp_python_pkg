@@ -4,9 +4,12 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    branches: [ main ]
     paths-ignore:
       - '**.md'
+      - 'docs/**.md'
+      - 'docs/*.md'
+    branches: [ main ]
+
 
 jobs:
   test:
