@@ -103,15 +103,15 @@ jobs:
           coverage.xml
           
 
-    - name: Commit report
-      run: |
-        printenv
-        git config user.name "$GITHUB_REPOSITORY_OWNER"
-        git config user.email "$GITHUB_REPOSITORY_OWNER@github.com"
-        git remote set-url origin https://x-access-token:${{ secrets.FLAKE8_TOKEN }}@github.com/${{ github.repository }}
-        git add .
-        git commit -m "Automated report [skip ci]" 
-        git push --force origin HEAD:$GITHUB_HEAD_REF
+    # - name: Commit report
+    #   run: |
+    #     printenv
+    #     git config user.name "$GITHUB_REPOSITORY_OWNER"
+    #     git config user.email "$GITHUB_REPOSITORY_OWNER@github.com"
+    #     git remote set-url origin https://x-access-token:${{ secrets.FLAKE8_TOKEN }}@github.com/${{ github.repository }}
+    #     git add .
+    #     git commit -m "Automated report [skip ci]" 
+    #     git push --force origin HEAD:$GITHUB_HEAD_REF
       
       #-m "" -m "" -m "skip-checks: true"
 
@@ -126,15 +126,26 @@ jobs:
     #    https://api.github.com/repos/BMeyn/temp_python_pkg/statuses/$git_commit_sha \
      #   -d '{"state":"success"}'
 
-   # - name: update docs
-    #  uses: gr2m/create-or-update-pull-request-action@v1
-    #  env:
-    #    GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }} #${{ secrets.GITHUB_TOKEN }} 
-     # with:
-     #   title: Docs Update module ducumentation
-     #   branch: ${{ github.head_ref }}
-     #   commit-message: "Auto commit [actions skip]"
+    # - name: update docs
+    #   uses: gr2m/create-or-update-pull-request-action@v1
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }} #${{ secrets.GITHUB_TOKEN }} 
+    #   with:
+    #     title: Docs Update module ducumentation
+    #     branch: ${{ github.head_ref }}
+    #     commit-message: "Auto commit from CI/CD"
+
                          
+    # update pull request with latest changes
+    - name: update pull request
+      uses: gr2m/create-or-update-pull-request-action@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }} #${{ secrets.GITHUB_TOKEN }} 
+      with:
+        title: Update module documentation
+        branch: ${{ github.head_ref }}
+        commit-message: "Auto commit from CI/CD"
+        update: true
                          
                          
   build:
