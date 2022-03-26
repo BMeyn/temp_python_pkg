@@ -4,7 +4,12 @@ on:
   push:
     branches: [ main ]
   pull_request:
+    paths-ignore:
+      - '**.md'
+      - 'docs/**.md'
+      - 'docs/*.md'
     branches: [ main ]
+
 
 jobs:
   test:
@@ -13,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.8", "3.9", "3.10"]
+        python-version: ["3.8"] #"3.9", "3.10"
 
     steps:
     - uses: actions/checkout@v3
@@ -32,11 +37,11 @@ jobs:
         python -m pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: flake8 Lint
-      uses: reviewdog/action-flake8@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        reporter: github-pr-review
+    #- name: flake8 Lint
+     # uses: reviewdog/action-flake8@v3
+     # with:
+     #   github_token: ${{ secrets.GITHUB_TOKEN }}
+     #   reporter: github-pr-review
 
     - name: generate pydocs
       run: |
@@ -86,16 +91,42 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided automatically, you do not need to create your own token
       with:
         templateFile: '${{ github.workspace }}//config//changelog_template.md'
-        outputfile: 'CHANGELOG.md'
+        outputfile: 'docs/CHANGELOG.md'
 
-    #- name: update docs
+    - name: Commit report
+      run: |
+        printenv
+        git config user.name "$GITHUB_REPOSITORY_OWNER"
+        git config user.email "$GITHUB_REPOSITORY_OWNER@github.com"
+        git remote set-url origin https://x-access-token:${{ secrets.FLAKE8_TOKEN }}@github.com/${{ github.repository }}
+        git add .
+        git commit -m "Automated report [skip ci]" 
+        git push --force origin HEAD:$GITHUB_HEAD_REF
+      
+      #-m "" -m "" -m "skip-checks: true"
+
+    #- name: update status
+    #  run: |
+    #    git_commit_sha="$(git rev-parse HEAD)"
+    #    curl \
+    #    -X POST \
+    #    -v \
+    #    -H "Accept: application/vnd.github.v3+json" \
+    #    -H "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+    #    https://api.github.com/repos/BMeyn/temp_python_pkg/statuses/$git_commit_sha \
+     #   -d '{"state":"success"}'
+
+   # - name: update docs
     #  uses: gr2m/create-or-update-pull-request-action@v1
-     # env:
-     #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} #${{ secrets.FLAKE8_TOKEN }}
-    #  with:
+    #  env:
+    #    GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }} #${{ secrets.GITHUB_TOKEN }} 
+     # with:
      #   title: Docs Update module ducumentation
-      #  branch: ${{ github.head_ref }}
-       # commit-message: "build: update docs"
+     #   branch: ${{ github.head_ref }}
+     #   commit-message: "Auto commit [actions skip]"
+                         
+                         
+                         
   build:
     needs: test
     if: github.ref == 'refs/heads/main'
