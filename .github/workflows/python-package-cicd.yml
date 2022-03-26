@@ -135,7 +135,9 @@ jobs:
     #     branch: ${{ github.head_ref }}
     #     commit-message: "Auto commit from CI/CD"
 
-                         
+    - name: check last commit message
+      run: echo ${{ github.event.commits[0].message }}
+
     ## update pull request with latest changes
     #- name: update pull request
     #  uses: gr2m/create-or-update-pull-request-action@v1
