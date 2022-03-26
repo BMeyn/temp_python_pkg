@@ -152,7 +152,6 @@ jobs:
         title: Update module documentation
         branch: ${{ github.head_ref }}
         commit-message: "Auto commit from CI/CD"
-        update: true
                          
                          
   build:
