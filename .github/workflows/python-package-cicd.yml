@@ -136,16 +136,16 @@ jobs:
     #     commit-message: "Auto commit from CI/CD"
 
                          
-    # update pull request with latest changes
-    - name: update pull request
-      uses: gr2m/create-or-update-pull-request-action@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }} #${{ secrets.GITHUB_TOKEN }} 
-      with:
-        title: Update module documentation
-        branch: ${{ github.head_ref }}
-        commit-message: "Auto commit from CI/CD"
-        update: true
+    ## update pull request with latest changes
+    #- name: update pull request
+    #  uses: gr2m/create-or-update-pull-request-action@v1
+    #  env:
+    #    GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }} #${{ secrets.GITHUB_TOKEN }} 
+    #  with:
+    #    title: Update module documentation
+    #    branch: ${{ github.head_ref }}
+    #    commit-message: "Auto commit from CI/CD"
+    #    update: true
                          
                          
   build:
