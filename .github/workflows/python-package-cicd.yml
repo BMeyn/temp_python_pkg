@@ -104,14 +104,14 @@ jobs:
           
 
     - name: Commit report
-     run: |
-       printenv
-       git config user.name "$GITHUB_REPOSITORY_OWNER"
-       git config user.email "$GITHUB_REPOSITORY_OWNER@github.com"
-       git remote set-url origin https://x-access-token:${{ secrets.FLAKE8_TOKEN }}@github.com/${{ github.repository }}
-       git add .
-       git commit -m "Automated report [skip ci]" 
-       git push --force origin HEAD:$GITHUB_HEAD_REF
+      run: |
+        printenv
+        git config user.name "$GITHUB_REPOSITORY_OWNER"
+        git config user.email "$GITHUB_REPOSITORY_OWNER@github.com"
+        git remote set-url origin https://x-access-token:${{ secrets.FLAKE8_TOKEN }}@github.com/${{ github.repository }}
+        git add .
+        git commit -m "Automated report [skip ci]" 
+        git push --force origin HEAD:$GITHUB_HEAD_REF
       
       #-m "" -m "" -m "skip-checks: true"
 
