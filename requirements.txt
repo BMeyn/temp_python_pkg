@@ -3,3 +3,5 @@ wheel
 pytest-cov
 setuptools_scm
 genbadge[all]
+flake8
+jinja2
