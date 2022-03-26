@@ -13,7 +13,8 @@ on:
 
 jobs:
   test:
-
+    env:
+      commitmsg: ${{ github.event.head_commit.message }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -141,10 +142,13 @@ jobs:
     # - name: commit check
     #   if: "contains(github.event.head_commit.message, 'Auto commit from CI/CD')"
     #   run: echo "commit message does not contain Auto commit from CI/CD"
-
+    - name: get commit message
+      run: |
+        echo Commit MSG = ${{ env.commitmsg }}
+        
     # update pull request with latest changes
     - name: update pull request
-      if: ${{ !contains(github.event.head_commit.message, 'Auto commit from CI/CD') }}
+      if: ${{ !contains(env.commitmsg, 'Auto commit from CI/CD') }}
       uses: gr2m/create-or-update-pull-request-action@v1
       env:
         GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }} #${{ secrets.GITHUB_TOKEN }} 
