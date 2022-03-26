@@ -37,11 +37,11 @@ jobs:
         python -m pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    #- name: flake8 Lint
-     # uses: reviewdog/action-flake8@v3
-     # with:
-     #   github_token: ${{ secrets.GITHUB_TOKEN }}
-     #   reporter: github-pr-review
+    - name: flake8 Lint
+     uses: reviewdog/action-flake8@v3
+     with:
+       github_token: ${{ secrets.GITHUB_TOKEN }}
+       reporter: github-pr-review
 
     - name: generate pydocs
       run: |
