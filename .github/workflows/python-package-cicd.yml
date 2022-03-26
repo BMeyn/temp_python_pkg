@@ -135,23 +135,24 @@ jobs:
     #     branch: ${{ github.head_ref }}
     #     commit-message: "Auto commit from CI/CD"
 
-    - name: check last commit message
-      run: echo "${{ github.event.head_commit.message }}"
+    # - name: check last commit message
+    #   run: echo "${{ github.event.head_commit.message }}"
     
-    - name: commit check
-      if: "contains(github.event.head_commit.message, 'Auto commit from CI/CD')"
-      run: echo "commit message does not contain Auto commit from CI/CD"
+    # - name: commit check
+    #   if: "contains(github.event.head_commit.message, 'Auto commit from CI/CD')"
+    #   run: echo "commit message does not contain Auto commit from CI/CD"
 
-    ## update pull request with latest changes
-    #- name: update pull request
-    #  uses: gr2m/create-or-update-pull-request-action@v1
-    #  env:
-    #    GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }} #${{ secrets.GITHUB_TOKEN }} 
-    #  with:
-    #    title: Update module documentation
-    #    branch: ${{ github.head_ref }}
-    #    commit-message: "Auto commit from CI/CD"
-    #    update: true
+    # update pull request with latest changes
+    - name: update pull request
+      if: "contains(github.event.head_commit.message, 'Auto commit from CI/CD')"
+       uses: gr2m/create-or-update-pull-request-action@v1
+       env:
+         GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }} #${{ secrets.GITHUB_TOKEN }} 
+       with:
+         title: Update module documentation
+         branch: ${{ github.head_ref }}
+         commit-message: "Auto commit from CI/CD"
+         update: true
                          
                          
   build:
