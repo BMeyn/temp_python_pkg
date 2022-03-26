@@ -2,7 +2,7 @@
 ## Run Details
 - Workflow: Python package CI/CD 
 - Head Branch: bugfix/skip-1 
-- Head SHA: 851210bc53804a288dcb8b404b82b0bfeff6d713 
+- Head SHA: 987b42128681b6b7ff327f0e0ef7bc0d457d0ec8 
 
 ## Pull Requests
 **38** Update python-package-cicd.yml
