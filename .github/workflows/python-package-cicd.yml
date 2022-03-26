@@ -93,15 +93,25 @@ jobs:
         templateFile: '${{ github.workspace }}//config//changelog_template.md'
         outputfile: 'docs/CHANGELOG.md'
 
-    - name: Commit report
-      run: |
-        printenv
-        git config user.name "$GITHUB_REPOSITORY_OWNER"
-        git config user.email "$GITHUB_REPOSITORY_OWNER@github.com"
-        git remote set-url origin https://x-access-token:${{ secrets.FLAKE8_TOKEN }}@github.com/${{ github.repository }}
-        git add .
-        git commit -m "Automated report [skip ci]" 
-        git push --force origin HEAD:$GITHUB_HEAD_REF
+    - name: Archive test reports and docs
+      uses: actions/upload-artifact@v3
+      with:
+        name: py-pkg-test-artifact
+        path: |
+          docs
+          out_report.xml
+          coverage.xml
+          
+
+    #- name: Commit report
+     # run: |
+     #   printenv
+    #    git config user.name "$GITHUB_REPOSITORY_OWNER"
+    #    git config user.email "$GITHUB_REPOSITORY_OWNER@github.com"
+    #    git remote set-url origin https://x-access-token:${{ secrets.FLAKE8_TOKEN }}@github.com/${{ github.repository }}
+     #   git add .
+      #  git commit -m "Automated report [skip ci]" 
+       # git push --force origin HEAD:$GITHUB_HEAD_REF
       
       #-m "" -m "" -m "skip-checks: true"
 
