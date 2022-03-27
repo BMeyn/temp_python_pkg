@@ -4,10 +4,6 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    paths-ignore:
-      - '**.md'
-      - 'docs/**.md'
-      - 'docs/*.md'
     branches: [ main ]
 
 
@@ -36,27 +32,17 @@ jobs:
         python -m pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    # - name: flake8 Lint
-    #   uses: reviewdog/action-flake8@v3
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     reporter: github-pr-review
+    - name: flake8 Lint
+      uses: reviewdog/action-flake8@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        reporter: github-pr-review
 
     - name: generate pydocs
       run: |
         cd src
         mkdir -p ../docs
         handsdown -o ../docs
-   
-    - name: Get PR
-      uses: 8BitJonny/gh-get-current-pr@1.4.0
-      id: PR
-      with:
-         github-token: ${{ secrets.GITHUB_TOKEN }}
-         # Verbose setting SHA when using Pull_Request event trigger to fix #16
-         sha: ${{ github.event.pull_request.head.sha }}
-         # Only return if PR is still open
-         filterOutClosed: true
  
     - name: Test with pytest
       run: |
@@ -91,64 +77,21 @@ jobs:
       with:
         templateFile: '${{ github.workspace }}//config//changelog_template.md'
         outputfile: 'docs/CHANGELOG.md'
-
-    - name: Archive test reports and docs
-      uses: actions/upload-artifact@v3
+   
+    - name: Get PR
+      uses: 8BitJonny/gh-get-current-pr@1.4.0
+      id: PR
       with:
-        name: py-pkg-test-artifact
-        path: |
-          docs
-          out_report.xml
-          coverage.xml
-          
-
-    # - name: Commit report
-    #   run: |
-    #     printenv
-    #     git config user.name "$GITHUB_REPOSITORY_OWNER"
-    #     git config user.email "$GITHUB_REPOSITORY_OWNER@github.com"
-    #     git remote set-url origin https://x-access-token:${{ secrets.FLAKE8_TOKEN }}@github.com/${{ github.repository }}
-    #     git add .
-    #     git commit -m "Automated report [skip ci]" 
-    #     git push --force origin HEAD:$GITHUB_HEAD_REF
-      
-      #-m "" -m "" -m "skip-checks: true"
-
-    #- name: update status
-    #  run: |
-    #    git_commit_sha="$(git rev-parse HEAD)"
-    #    curl \
-    #    -X POST \
-    #    -v \
-    #    -H "Accept: application/vnd.github.v3+json" \
-    #    -H "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-    #    https://api.github.com/repos/BMeyn/temp_python_pkg/statuses/$git_commit_sha \
-     #   -d '{"state":"success"}'
-
-    # - name: update docs
-    #   uses: gr2m/create-or-update-pull-request-action@v1
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.FLAKE8_TOKEN }} #${{ secrets.GITHUB_TOKEN }} 
-    #   with:
-    #     title: Docs Update module ducumentation
-    #     branch: ${{ github.head_ref }}
-    #     commit-message: "Auto commit from CI/CD"
-
-    # - name: check last commit message
-    #   run: echo "${{ github.event.head_commit.message }}"
-    
-    # - name: commit check
-    #   if: "contains(github.event.head_commit.message, 'Auto commit from CI/CD')"
-    #   run: echo "commit message does not contain Auto commit from CI/CD"
-
-    
+         github-token: ${{ secrets.GITHUB_TOKEN }}
+         # Verbose setting SHA when using Pull_Request event trigger to fix #16
+         sha: ${{ github.event.pull_request.head.sha }}
+         # Only return if PR is still open
+         filterOutClosed: true
+         
     - name: Get Commit Message
       run: |
         MSG=$(git log --format=%B -n 1 ${{github.event.after}})
         echo "COMMIT_MESSAGE=${MSG}" >> $GITHUB_ENV
-    
-    - name: Echo commit message
-      run: echo "${{ env.COMMIT_MESSAGE }}"
       
     # update pull request with latest changes
     - name: update pull request
