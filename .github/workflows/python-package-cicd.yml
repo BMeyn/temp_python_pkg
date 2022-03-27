@@ -100,7 +100,7 @@ jobs:
   docs:
     needs: test
     runs-on: ubuntu-latest
-    if: ${{ !contains(env.COMMIT_MESSAGE, 'Auto commit from CI/CD') }}
+    #if: ${{ !contains(env.COMMIT_MESSAGE, 'Auto commit from CI/CD') }}
     steps:
     
     - uses: actions/checkout@v3
@@ -112,7 +112,12 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: py-pkg-test-artifact
-              
+        
+    - name: Get Commit Message
+      run: |
+        MSG=$(git log --format=%B -n 1 ${{github.event.after}})
+        echo "COMMIT_MESSAGE=${MSG}" >> $GITHUB_ENV
+        
     # update pull request with latest changes
     - name: update pull request
       if: ${{ !contains(env.COMMIT_MESSAGE, 'Auto commit from CI/CD') }}
