@@ -4,3 +4,5 @@ pytest
 pytest-cov
 setuptools_scm
 genbadge[all]
+jinja2==3.0
+flake8
