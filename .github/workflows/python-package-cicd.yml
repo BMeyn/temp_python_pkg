@@ -1,3 +1,4 @@
+
 name: Python package CI/CD
 
 on:
@@ -31,7 +32,6 @@ jobs:
         python3 -m pip install --upgrade pip
         python3 -m pip install --upgrade setuptools
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
     - name: flake8 Lint
       uses: reviewdog/action-flake8@v3
       with:
@@ -47,15 +47,6 @@ jobs:
       if: always()
       with:
         files: "out_report.xml"
-  
-    #- uses: codecov/codecov-action@v2
-     # with:
-        #files: coverage.xml
-        #token: ${{ secrets.codecov_token }}
-        #flags: unittests # optional
-        #name: codecov-umbrella # optional
-        #fail_ci_if_error: true # optional (default = false)
-        #verbose: true # optional (default = false)
     
     
     - name: Archive production artifacts
@@ -79,8 +70,7 @@ jobs:
       with:
         persist-credentials: false
         fetch-depth: 0
-    - name: check env
-      run: printenv
+
     - name: Download a single artifact
       uses: actions/download-artifact@v3
       with:
@@ -97,11 +87,10 @@ jobs:
         python3 -m pip install --upgrade setuptools
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         
-        
     - name: generate badgets
       run: |
         # generate badget for unittests
-        genbadge tests --input-file out_report.xml --output-file docs/badget/tests-badget.svg
+        genbadge tests --input-file out_report.xml --output-file docs/badget/unittest-badget.svg
         # generate badget for coverage 
         genbadge coverage --input-file coverage.xml --output-file docs/badget/coverage-badget.svg
 
@@ -112,16 +101,23 @@ jobs:
       with:
         templateFile: '${{ github.workspace }}//config//changelog_template.md'
         outputfile: 'docs/CHANGELOG.md'
+
     - name: generate pydocs
       run: |
         cd src
         mkdir -p ../docs
         handsdown -o ../docs
+      
+    - name: Generate README
+      run: |
+        python3 src/helper/gen_readme.py --config "config/project_config.yml" --template "templates/readme_jinja/readme_template.j2" --output "README.md"
+        
+
     - name: Get Commit Message
       run: |
         MSG=$(git log --format=%B -n 1 ${{github.event.after}})
         echo "COMMIT_MESSAGE=${MSG}" >> $GITHUB_ENV
-        
+
     # update pull request with latest changes
     - name: update pull request
       if: ${{ !contains(env.COMMIT_MESSAGE, 'Auto commit from CI/CD') }}
@@ -133,7 +129,7 @@ jobs:
         branch: ${{ github.head_ref }}
         commit-message: "Auto commit from CI/CD"
         
-    
+
   build:
     needs: test
     if: github.ref == 'refs/heads/main'
@@ -171,6 +167,7 @@ jobs:
 
     - name: write version number to file
       run: echo "$GITVERSION_SEMVER"  > version.txt
+
     - name: Archive production artifacts
       uses: actions/upload-artifact@v3
       with:
@@ -201,6 +198,7 @@ jobs:
       run: |
         ls
         ls dist
+
     - name: read version number
       run: |
         version=$(cat "version.txt") 
@@ -234,3 +232,4 @@ jobs:
         body_path: CHANGELOG.md
       env:
         GITHUB_TOKEN: ${{ github.token }}
+
