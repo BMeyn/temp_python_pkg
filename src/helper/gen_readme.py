@@ -1,10 +1,6 @@
-import json
 import jinja2
 import yaml
 import argparse
-import os
-
-# replace github_repo_url with the github_repo_url parameter in jinja2 template
 
 
 def generate_readme_jinja2(config_path, readme_template_path, output_file_path):
