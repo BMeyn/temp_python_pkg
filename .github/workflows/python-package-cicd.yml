@@ -112,6 +112,7 @@ jobs:
       run: |
         python3 src/helper/gen_readme.py --config "config/project_config.yml" --template "templates/readme_jinja/readme_template.j2" --output "README.md"
         
+
     - name: Get Commit Message
       run: |
         MSG=$(git log --format=%B -n 1 ${{github.event.after}})
@@ -128,6 +129,7 @@ jobs:
         branch: ${{ github.head_ref }}
         commit-message: "Auto commit from CI/CD"
         
+
   build:
     needs: test
     if: github.ref == 'refs/heads/main'
