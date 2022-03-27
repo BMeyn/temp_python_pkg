@@ -79,7 +79,8 @@ jobs:
       with:
         persist-credentials: false
         fetch-depth: 0
-        
+    - name: check env
+      run: printenv
     - name: Download a single artifact
       uses: actions/download-artifact@v3
       with:
