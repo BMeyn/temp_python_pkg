@@ -2,8 +2,7 @@
 
 from setuptools import setup, find_packages
 
-import yaml 
-import os
+import yaml
 
 from setuptools import setup
 
@@ -16,21 +15,23 @@ def get_long_description():
     long_description = (this_directory / "README.md").read_text()
     return long_description
 
+
 def load_requirements(requirements_path):
     """function that loads the requirements.txt file and returns a list of packages to be installed"""
     with open(requirements_path, 'r') as stream:
         requirements = stream.read().splitlines()
     return requirements
 
-# load project_config from "config/project_config.yml"
+
 def load_project_config(config_path):
     """ load_project_config Module """
     with open(config_path, 'r') as stream:
         config_dict = yaml.full_load(stream)
     return config_dict
 
+
 if __name__ == '__main__':
-    
+
     project_config = load_project_config("config/project_config.yml")
     dependencies = load_requirements("requirements.txt")
     long_description = get_long_description()
@@ -45,5 +46,5 @@ if __name__ == '__main__':
         long_description=long_description,
         long_description_content_type='text/markdown',
         description=project_config["package_description"],
-        install_requires= dependencies
+        install_requires=dependencies
     )
