@@ -70,7 +70,9 @@ jobs:
   docs:
     needs: test
     runs-on: ubuntu-latest
-    if: ${{ !contains(github.event.head_commit.message, 'Auto commit from CI/CD') }}
+    if: |
+     ${{ !contains(github.event.head_commit.message, 'Auto commit from CI/CD') }} &&
+      github.ref != 'refs/heads/main'
     steps:
     
     - uses: actions/checkout@v3
