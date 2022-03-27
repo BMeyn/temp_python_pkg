@@ -1,31 +1,24 @@
 # Release Notes 
 ## Run Details
 - Workflow: Python package CI/CD 
-
-- Head Branch: bugfix/update_docs 
-- Head SHA: 6b419706262a747e6389b7e80520a6d83c311d76 
+- Head Branch: feature/generate_readme 
+- Head SHA: 2ccf015cc12bc1d3753afdb58b8e950547fb390d 
 
 ## Pull Requests
-**43** debug if clause for docs action on main branch
+**44** added jinja tempate to generate README with parameters from config/project_config.yml
 ### Commits
-  - **5ef02c89d36599c0c87f2fde87ba25e87d648c75** Update python-package-cicd.yml
-  - **67d41cdb33b46d9037e9bc303d6f0915a37e722d** Update python-package-cicd.yml
-  - **088536519e5389b2825e1d931a749659d857f9fb** Auto commit from CI/CD
-  - **6b419706262a747e6389b7e80520a6d83c311d76** Merge branch &#x27;main&#x27; into bugfix/update_docs
+  - **4f1412183679c25c3159bb30dcdd98dd1eb491a8** added jinja tempate to generate README with parameters from config/project_config.yml
+  - **5997be2a49301240baecaf11729efd8d0135a6eb** Merge branch &#x27;main&#x27; into feature/generate_readme
+  - **ff6027bd562991755b8c8c122fae0f4e49dfc4c3** updated flake8 suggestions
+  - **e8b4b4b6dc35635499814117841ba6f586c6db6f** Merge branch &#x27;feature/generate_readme&#x27; of https://github.com/BMeyn/temp_python_pkg into feature/generate_readme
+  - **55fc1e16610fbd748636e98297d222ff2530a74c** added missing yaml package to requirements file
+  - **2ccf015cc12bc1d3753afdb58b8e950547fb390d** change wrong package name to PyYAML
 ### Comments
  - ## Unit Test Results
 1 files  ±0  1 suites  ±0   0s [:stopwatch:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;duration of all tests&quot;) ±0s
 1 tests ±0  1 [:heavy_check_mark:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;passed tests&quot;) ±0  0 [:zzz:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;skipped / disabled tests&quot;) ±0  0 [:x:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;failed tests&quot;) ±0 
 
-Results for commit 6b419706. ± Comparison against base commit cd4412e3.
-
-Results for commit b6fb846f. ± Comparison against base commit c23b0302.
-
- - ## Unit Test Results
-1 files  ±0  1 suites  ±0   0s [:stopwatch:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;duration of all tests&quot;) ±0s
-1 tests ±0  1 [:heavy_check_mark:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;passed tests&quot;) ±0  0 [:zzz:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;skipped / disabled tests&quot;) ±0  0 [:x:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;failed tests&quot;) ±0 
-
-Results for commit b6fb846f. ± Comparison against base commit c23b0302.
+Results for commit 2ccf015c. ± Comparison against base commit 7cffeec6.
 
 :recycle: This comment has been updated with latest results.
 
