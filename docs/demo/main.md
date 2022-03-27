@@ -8,7 +8,7 @@
 
 ## new_func
 
-[[find in source code]](../../../demo/main.py#L6)
+[[find in source code]](../../../demo/main.py#L7)
 
 ```python
 def new_func():
