@@ -1,19 +1,20 @@
 # Release Notes 
 ## Run Details
 - Workflow: Python package CI/CD 
-- Head Branch: bugfix/docs_update 
-- Head SHA: 1dbf15907f422594580d4828b90f142d5acfee32 
+- Head Branch: bugfix/update_docs 
+- Head SHA: 67d41cdb33b46d9037e9bc303d6f0915a37e722d 
 
 ## Pull Requests
-**41** Dont update docs on main
+**43** debug if clause for docs action on main branch
 ### Commits
-  - **1dbf15907f422594580d4828b90f142d5acfee32** Update python-package-cicd.yml
+  - **5ef02c89d36599c0c87f2fde87ba25e87d648c75** Update python-package-cicd.yml
+  - **67d41cdb33b46d9037e9bc303d6f0915a37e722d** Update python-package-cicd.yml
 ### Comments
  - ## Unit Test Results
 1 files  ±0  1 suites  ±0   0s [:stopwatch:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;duration of all tests&quot;) ±0s
 1 tests ±0  1 [:heavy_check_mark:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;passed tests&quot;) ±0  0 [:zzz:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;skipped / disabled tests&quot;) ±0  0 [:x:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;failed tests&quot;) ±0 
 
-Results for commit 1dbf1590. ± Comparison against base commit c4788b8d.
+Results for commit 67d41cdb. ± Comparison against base commit cd4412e3.
 
 :recycle: This comment has been updated with latest results.
 
