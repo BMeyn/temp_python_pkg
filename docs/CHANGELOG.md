@@ -2,13 +2,11 @@
 ## Run Details
 - Workflow: Python package CI/CD 
 - Head Branch: bugfix/skip-1 
-- Head SHA: e5038361cc6ed35b0321b43dfe1d6d5f4c9900b2 
+- Head SHA: 7207cfbe2558336891a3fb1aa9a7d2c95a717e36 
 
 ## Pull Requests
-**38** Update python-package-cicd.yml
+**38** Implememt required checks for prs
 ### Commits
-  - **0575d8940e03ae2a0218055bd5b114e7f6e110d8** Update python-package-cicd.yml
-  - **b6377580f1a5eef6e4e31a10c3d91f7fe1fb897c** Update python-package-cicd.yml
   - **ec7a8d7c3c60ab2c71e68372f481c28563b681e0** Update python-package-cicd.yml
   - **4e3c96965ddb32f0c805197531899faee81bb745** Update python-package-cicd.yml
   - **f74ebeb795f1e578c7acb84ffb6719a640f0164c** Update python-package-cicd.yml
@@ -53,6 +51,10 @@ skip-checks:true
   - **380e08957a14a3a8933d75742441ee268b7953bf** Auto commit
 
 skip-checks:true
+  - **0ba646e7778f14c56bafc60ed9e078302e7f0f8d** Update python-package-cicd.yml
+  - **e3ec893e8cc1da4a8e03cd10f8990c88d771f342** Auto commit
+
+skip-checks:true
 ### Comments
  - ## Unit Test Results
 1 files  ±0  1 suites  ±0   0s [:stopwatch:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;duration of all tests&quot;) ±0s
@@ -64,7 +66,7 @@ Results for commit 9e9ae0e7. ± Comparison against base commit fba29d10.
 1 files  ±0  1 suites  ±0   0s [:stopwatch:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;duration of all tests&quot;) ±0s
 1 tests ±0  1 [:heavy_check_mark:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;passed tests&quot;) ±0  0 [:zzz:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;skipped / disabled tests&quot;) ±0  0 [:x:](https://github.com/EnricoMi/publish-unit-test-result-action/blob/v1.20/README.md#the-symbols &quot;failed tests&quot;) ±0 
 
-Results for commit e5038361. ± Comparison against base commit fba29d10.
+Results for commit 7207cfbe. ± Comparison against base commit fba29d10.
 
 :recycle: This comment has been updated with latest results.
 
