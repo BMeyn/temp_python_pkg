@@ -5,7 +5,7 @@
 *****
 
 [![HitCount](https://hits.dwyl.com/BMeyn/temp_python_pkg.svg?style=flat-square)](http://hits.dwyl.com/BMeyn/temp_python_pkg)
-[![PyPI version](https://badge.fury.io/py/BMeyn.svg)](https://badge.fury.io/py)
+[![PyPI version](https://badge.fury.io/py/BMeyn.svg)](https://badge.fury.io/py/BMeyn)
 [![Tests Status](https://BMeyn.github.io/temp_python_pkg/docs/badget/unittest-badget.svg?dummy=8484744)]()
 [![Coverage Status](https://BMeyn.github.io/temp_python_pkg/docs/badget/coverage-badget.svg?dummy=8484744)]()
 
