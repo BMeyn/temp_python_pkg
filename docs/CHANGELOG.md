@@ -1,6 +1,5 @@
 # Release Notes 
 ## Pull Requests
-**47** cleaned up project tree and addded package requirements file
+**48** fix wrong dependencie path in steup file
 ### Commits
-  - **7bdacf08c2ac7e057b1c823898fed729107b65db** cleaned up project tree and addded package requirements file
-  - **abaea78784ab35f596fbd144f54ab853e7af2050** fix closing forEach in changelog template
+  - **a01e6d515b3bdd50e079f4b718484faaa4d78681** fix wrong dependencie path in steup file

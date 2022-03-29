@@ -34,7 +34,7 @@ def load_project_config(config_path):
 if __name__ == '__main__':
 
     project_config = load_project_config("config/project_config.yml")
-    dependencies = load_requirements("pkg_requirements.txt")
+    dependencies = load_requirements("requirements_pkg.txt.txt")
     long_description = get_long_description()
 
     setup(
