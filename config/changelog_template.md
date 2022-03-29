@@ -6,3 +6,4 @@
   {{#forEach this.commits}}
   - **{{this.sha}}** {{this.commit.message}}
   {{/forEach}}
+{{/forEach}}
