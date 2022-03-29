@@ -1,5 +1,5 @@
 # Release Notes 
 ## Pull Requests
-**48** fix wrong dependencie path in steup file
+**49** removed duplicated txt ending in stup requirements
 ### Commits
-  - **a01e6d515b3bdd50e079f4b718484faaa4d78681** fix wrong dependencie path in steup file
+  - **27f1c7ba840077deb31592edf788bd108c513f24** removed duplicated txt ending in stup requirements
